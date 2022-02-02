@@ -147,7 +147,7 @@
             android:id="@+id/loginNextBtn"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/beige"
+            android:background="@color/blue"
             android:clickable="true"
             android:src="@drawable/ic_next"
             tools:layout_editor_absoluteX="239dp"
