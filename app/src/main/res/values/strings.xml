@@ -4,8 +4,10 @@
 <!--    Login Activity      -->
     <string name="logIn"> Login</string>
     <string name="signUp"> Sign Up</string>
-    <string name="email"> Email address</string>
-    <string name="password"> Password</string>
+    <string name="email"> Enter your email address</string>
+    <string name="password"> Enter a password</string>
+    <string name="password2"> Enter the password again </string>
+    <string name="password3"> Enter your password</string>
     <string name="forgotPassword"> Forgot password?</string>
     <string name="welcome">Welcome back! Log in to continue</string>
     <string name="noAccount">Dont have an account? Sign up</string>
