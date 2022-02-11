@@ -12,12 +12,8 @@ class AccountActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.account_activity)
-
         var loginButton = findViewById<MaterialButton>(R.id.loginButton)
         var signUpButton = findViewById<MaterialButton>(R.id.signUpButton)
-
-
-
 
     }
 

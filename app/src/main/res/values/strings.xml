@@ -4,6 +4,7 @@
 <!--    Login Activity      -->
     <string name="logIn"> Login</string>
     <string name="signUp"> Sign Up</string>
+    <string name="displayName"> Enter your username</string>
     <string name="email"> Enter your email address</string>
     <string name="password"> Enter a password</string>
     <string name="password2"> Enter the password again </string>
