@@ -28,7 +28,7 @@ class SignUpActivity: AppCompatActivity() {
         var signUpButton = findViewById<ImageButton>(R.id.createAccBtn)
         signUpButton.setOnClickListener {
             var username = findViewById<EditText>(R.id.usernameEt).text.toString().trim()
-            var email = findViewById<EditText>(R.id.emailEt).text.toString().trim()
+            var email = findViewById<EditText>(R.id.passwordET).text.toString().trim()
             var password = findViewById<EditText>(R.id.passwordEt).text.toString().trim()
 
             if (!TextUtils.isEmpty(username) || !TextUtils.isEmpty(email) || !TextUtils.isEmpty(password)){
@@ -75,6 +75,11 @@ class SignUpActivity: AppCompatActivity() {
                     if (task.isSuccessful){
                         Toast.makeText(this, "Sign Up Successful!", Toast.LENGTH_LONG)
                             .show()
+
+                        var intent = Intent(this, DashboardActivity::class.java)
+                        intent.putExtra("username", username)
+                        startActivity(intent)
+                        finish()
 
                     }else {
                         Toast.makeText(this, "Sign Up Unsuccessful", Toast.LENGTH_LONG)

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">CADR</string>
 
-<!--    Login Activity      -->
+    <!--    Login Activity      -->
     <string name="logIn"> Login</string>
     <string name="signUp"> Sign Up</string>
     <string name="displayName"> Enter your username</string>
@@ -14,8 +14,6 @@
     <string name="noAccount">Dont have an account? Sign up</string>
 
 
-
-
     <string name="title_activity_main"> MainActivity</string>
     <string name="navigation_drawer_open"> Open navigation drawer</string>
     <string name="navigation_drawer_close"> Close navigation drawer</string>
@@ -23,4 +21,10 @@
     <string name="nav_header_subtitle"> android.studio@android.com</string>
     <string name="nav_header_desc"> Navigation header</string>
     <string name="action_settings"> Settings</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
 </resources>
