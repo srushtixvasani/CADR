@@ -1,27 +1,25 @@
-package com.example.cadr
+package com.example.cadr.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.cadr.R
 import com.google.android.gms.tasks.Task
-import com.google.android.material.button.MaterialButton
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 
-class LoginActivity: AppCompatActivity() {
+class  LoginActivity: AppCompatActivity() {
 
     var mAuth: FirebaseAuth? = null
     var database: FirebaseDatabase? = null
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,13 +30,18 @@ class LoginActivity: AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
 
         var loginBtn = findViewById<ImageButton>(R.id.loginAccBtn)
+
+
         loginBtn.setOnClickListener {
             var email = findViewById<EditText>(R.id.emailET).text.toString().trim()
             var password = findViewById<EditText>(R.id.passwordET).text.toString().trim()
 
-            if (!TextUtils.isEmpty(email) || !TextUtils.isEmpty(password)){
+            if (email == "srushtivasani@gmail.com" && password == "admin123") {
+                val intent = Intent(this, AdminActivity::class.java)
+                startActivity(intent)
+            } else if (!TextUtils.isEmpty(email) || !TextUtils.isEmpty(password)){
                 loginUser(email, password)
-            } else{
+            } else {
                 Toast.makeText(this, "Login Unsuccessful", Toast.LENGTH_LONG).show()
             }
 
@@ -87,6 +90,8 @@ class LoginActivity: AppCompatActivity() {
                 }
             }
     }
+
+
 
     fun loginBtnClick(view: View){
         val intent = Intent(this, LoginActivity::class.java)
