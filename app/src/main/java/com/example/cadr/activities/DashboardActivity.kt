@@ -28,6 +28,9 @@ class DashboardActivity: AppCompatActivity() {
         var tabs = findViewById<TabLayout>(R.id.dashboard_tab)
         tabs.setupWithViewPager(dashboardViewPager)
 
+
+
+
         if (intent.extras != null){
             var username = intent.extras!!.get("username")
 
