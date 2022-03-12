@@ -23,8 +23,6 @@ class DashboardActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dashboard_activity)
 
-        //supportActionBar!!.title = "Dashboard"
-
         dashboardAdapter = DashboardPagerAdapter(supportFragmentManager)
 
         var dashboardViewPager = findViewById<ViewPager>(R.id.dashboard_viewpager)
@@ -55,30 +53,6 @@ class DashboardActivity: AppCompatActivity() {
         return true
     }
 
-    fun eventsOnClick(view: MenuItem){
-        val intent = Intent(this, EventsActivity::class.java)
-        startActivity(intent)
-    }
-
-    fun chatOnClick(view: MenuItem){
-        val intent = Intent(this, ChatActivity::class.java)
-        startActivity(intent)
-    }
-
-
-    fun quizOnClick(view: MenuItem){
-        val intent = Intent(this, QuizActivity::class.java)
-        startActivity(intent)
-    }
-
-
-    fun accountOnClick(view: MenuItem){
-        val intent = Intent(this, ProfileActivity::class.java)
-        startActivity(intent)
-    }
-
-
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         super.onOptionsItemSelected(item)
 
@@ -105,6 +79,28 @@ class DashboardActivity: AppCompatActivity() {
         }
 
         return true
+    }
+
+    fun eventsOnClick(view: MenuItem){
+        val intent = Intent(this, EventsActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun chatOnClick(view: MenuItem){
+        val intent = Intent(this, ChatActivity::class.java)
+        startActivity(intent)
+    }
+
+
+    fun quizOnClick(view: MenuItem){
+        val intent = Intent(this, QuizActivity::class.java)
+        startActivity(intent)
+    }
+
+
+    fun accountOnClick(view: MenuItem){
+        val intent = Intent(this, ProfileActivity::class.java)
+        startActivity(intent)
     }
 
 }
