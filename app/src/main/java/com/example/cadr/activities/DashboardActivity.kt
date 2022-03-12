@@ -1,6 +1,10 @@
 package com.example.cadr.activities
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
@@ -42,6 +46,65 @@ class DashboardActivity: AppCompatActivity() {
                 .show()
         }
 
-
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        super.onCreateOptionsMenu(menu)
+        menuInflater.inflate(R.menu.bottom_app_nav, menu)
+
+        return true
+    }
+
+    fun eventsOnClick(view: MenuItem){
+        val intent = Intent(this, EventsActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun chatOnClick(view: MenuItem){
+        val intent = Intent(this, ChatActivity::class.java)
+        startActivity(intent)
+    }
+
+
+    fun quizOnClick(view: MenuItem){
+        val intent = Intent(this, QuizActivity::class.java)
+        startActivity(intent)
+    }
+
+
+    fun accountOnClick(view: MenuItem){
+        val intent = Intent(this, ProfileActivity::class.java)
+        startActivity(intent)
+    }
+
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        super.onOptionsItemSelected(item)
+
+        if (item.itemId == R.id.events) {
+            // intent to events activity
+            startActivity(Intent(this, EventsActivity::class.java))
+        }
+
+        if(item.itemId == R.id.chat) {
+            // intent to chat activity
+            startActivity(Intent(this, ChatActivity::class.java))
+        }
+
+        if(item.itemId == R.id.quiz) {
+            // intent to quiz activity
+            var intent = Intent(this, QuizActivity::class.java)
+            startActivity(intent)
+
+        }
+
+        if(item.itemId == R.id.account) {
+            // intent to profile activity
+            startActivity(Intent(this, AccountActivity::class.java))
+        }
+
+        return true
+    }
+
 }
