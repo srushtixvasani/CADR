@@ -41,8 +41,20 @@ app:tabMaxWidth="200dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
         app:hideOnScroll="true"
         app:fabAnimationMode="slide">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="16dp"
+            android:background="@color/white"
+            app:menu="@menu/bottom_app_nav">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     </com.google.android.material.bottomappbar.BottomAppBar>
 
@@ -51,7 +63,10 @@ app:tabMaxWidth="200dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_anchor="@id/bottomAppBar"
-        android:src="@drawable/ic_event">
-
+        android:layout_marginHorizontal="10dp"
+        app:elevation="3dp"
+        app:tint="@color/blue"
+        android:src="@drawable/ic_home">
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

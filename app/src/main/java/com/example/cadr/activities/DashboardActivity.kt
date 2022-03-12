@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.example.cadr.R
 import com.example.cadr.adapters.DashboardPagerAdapter
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.tabs.TabLayout
 
 
@@ -28,6 +29,9 @@ class DashboardActivity: AppCompatActivity() {
         var tabs = findViewById<TabLayout>(R.id.dashboard_tab)
         tabs.setupWithViewPager(dashboardViewPager)
 
+        var bottomNavView = findViewById<BottomNavigationView>(R.id.bottomNavView)
+        bottomNavView.background = null
+        bottomNavView.menu.getItem(2).isEnabled = false
 
 
 
