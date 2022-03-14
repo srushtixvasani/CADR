@@ -3,6 +3,7 @@ package com.example.cadr.activities
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageButton
@@ -20,6 +21,9 @@ class SignUpActivity: AppCompatActivity() {
     var mAuth: FirebaseAuth? = null
     var database: DatabaseReference? = null
 
+    private val TAG = "MyActivity"
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.signup_activity)
@@ -32,13 +36,11 @@ class SignUpActivity: AppCompatActivity() {
             var email = findViewById<EditText>(R.id.passwordET).text.toString().trim()
             var password = findViewById<EditText>(R.id.passwordEt).text.toString().trim()
 
-            if (username == "Admin" && email == "srushtivasani@gmail.com" && password == "admin123") {
-               adminSignUp(username, email, password)
-            } else if (!TextUtils.isEmpty(username) || !TextUtils.isEmpty(email) || !TextUtils.isEmpty(password)){
+            if (!TextUtils.isEmpty(username) || !TextUtils.isEmpty(email) || !TextUtils.isEmpty(password)){
                 signUp(username, email, password)
             }else {
                 Toast.makeText(this, "Please fill out all the fields",
-                    Toast.LENGTH_LONG).show()
+                        Toast.LENGTH_LONG).show()
             }
         }
 
@@ -57,77 +59,75 @@ class SignUpActivity: AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun signUp(username: String, email: String, password: String ){
-        mAuth!!.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
-            task: Task<AuthResult> ->
+    fun signUp(username: String, email: String, password: String){
 
-            if (task.isSuccessful){
-                var currentUser = mAuth!!.currentUser
-                var userId = currentUser!!.uid
+        mAuth!!.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task: Task<AuthResult> ->
 
-                database = FirebaseDatabase.getInstance().reference.child("Users")
-                    .child(userId)
+            if (username == "Srushti" && email == "srushtivasani@gmail.com" && password == "admin123") {
+                if (task.isSuccessful ){
+                    var currentAdmin = mAuth!!.currentUser
+                    var adminId = currentAdmin!!.uid
 
-                var userObj = HashMap<String, String>()
-                userObj.put("username", username)
-                // add email?
-                userObj.put("status", "Hello World")
-                userObj.put("image", "default")
+                    database = FirebaseDatabase.getInstance().reference.child("Admin")
+                            .child(adminId)
 
-                database!!.setValue(userObj).addOnCompleteListener {
-                    task: Task<Void> ->
-                    if (task.isSuccessful){
-                        Toast.makeText(this, "Sign Up Successful!", Toast.LENGTH_LONG)
-                            .show()
-                        var intent = Intent(this, DashboardActivity::class.java)
-                        intent.putExtra("username", username)
-                        startActivity(intent)
-                        finish()
-                    }else {
-                        Toast.makeText(this, "Sign Up Unsuccessful", Toast.LENGTH_LONG)
-                            .show()
+                    var adminObj = HashMap<String, String>()
+                    adminObj.put("username", username)
+                    // add email?
+                    adminObj.put("status", "Hello World")
+                    adminObj.put("image", "default")
+
+                    database!!.setValue(adminObj).addOnCompleteListener { task: Task<Void> ->
+                        if (task.isSuccessful){
+                            Toast.makeText(this, "Admin Sign Up Successful!", Toast.LENGTH_LONG)
+                                    .show()
+                            var intent = Intent(this, AdminActivity::class.java)
+                            intent.putExtra("admin username", username)
+                            startActivity(intent)
+                            finish()
+                        }else {
+                            Log.d(TAG, "Not working - ADMIN SIGN UP")
+                            Toast.makeText(this, "Admin Sign Up Unsuccessful", Toast.LENGTH_LONG)
+                                    .show()
+                        }
                     }
+                } else {
+                    Log.d(TAG, "ADMIN SIGN UP NOT WORKING")
                 }
-            }else {
 
-            }
-        }
-    }
+            } else {
+                if (task.isSuccessful){
+                    var currentUser = mAuth!!.currentUser
+                    var userId = currentUser!!.uid
 
-    fun adminSignUp(username: String, email: String, password: String ){
-        mAuth!!.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
-            task: Task<AuthResult> ->
+                    database = FirebaseDatabase.getInstance().reference.child("Users")
+                            .child(userId)
 
-            if (task.isSuccessful){
-                var currentUser = mAuth!!.currentUser
-                var userId = currentUser!!.uid
+                    var userObj = HashMap<String, String>()
+                    userObj.put("username", username)
+                    // add email?
+                    userObj.put("status", "Hello World")
+                    userObj.put("image", "default")
 
-                database = FirebaseDatabase.getInstance().reference.child("Admin")
-                        .child(userId)
-
-                var userObj = HashMap<String, String>()
-                userObj.put("username", username)
-                // add email?
-                userObj.put("status", "Hello World")
-                userObj.put("image", "default")
-
-                database!!.setValue(userObj).addOnCompleteListener {
-                    task: Task<Void> ->
-                    if (task.isSuccessful){
-                        Toast.makeText(this, "Admin sign Up Successful!", Toast.LENGTH_LONG)
-                                .show()
-                        var intent = Intent(this, AdminActivity::class.java)
-                        intent.putExtra("username", username)
-                        startActivity(intent)
-                        finish()
-                    }else {
-                        Toast.makeText(this, "Admin sign Up Unsuccessful", Toast.LENGTH_LONG)
-                                .show()
+                    database!!.setValue(userObj).addOnCompleteListener { task: Task<Void> ->
+                        if (task.isSuccessful){
+                            Toast.makeText(this, "Sign Up Successful!", Toast.LENGTH_LONG)
+                                    .show()
+                            var intent = Intent(this, DashboardActivity::class.java)
+                            intent.putExtra("username", username)
+                            startActivity(intent)
+                            finish()
+                        }else {
+                            Toast.makeText(this, "Sign Up Unsuccessful", Toast.LENGTH_LONG)
+                                    .show()
+                        }
                     }
-                }
-            }else {
 
+                } else {
+                    Log.d(TAG, "NOT WORKING ")
+                }
             }
+
         }
     }
 }
