@@ -108,13 +108,14 @@ class SignUpActivity: AppCompatActivity() {
                     // add email?
                     userObj.put("status", "Hello World")
                     userObj.put("image", "default")
+                    userObj.put("thumbnail", "default")
 
                     database!!.setValue(userObj).addOnCompleteListener { task: Task<Void> ->
                         if (task.isSuccessful){
                             Toast.makeText(this, "Sign Up Successful!", Toast.LENGTH_LONG)
                                     .show()
                             var intent = Intent(this, DashboardActivity::class.java)
-                            intent.putExtra("username", username)
+                            intent.putExtra("username",  username)
                             startActivity(intent)
                             finish()
                         }else {
@@ -124,7 +125,7 @@ class SignUpActivity: AppCompatActivity() {
                     }
 
                 } else {
-                    Log.d(TAG, "NOT WORKING ")
+                    Log.d(TAG, "SIGN UP NOT WORKING ")
                 }
             }
 

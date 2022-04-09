@@ -21,7 +21,7 @@
         android:layout_marginTop="60dp"
         app:tabTextColor="@color/blue"
         app:tabMode="scrollable"
-app:tabMaxWidth="200dp"
+        app:tabMaxWidth="200dp"
         app:tabMinWidth="200dp"
         android:paddingHorizontal="10dp"
         app:tabSelectedTextColor="@color/dark_blue"
@@ -65,6 +65,7 @@ app:tabMaxWidth="200dp"
         app:layout_anchor="@id/bottomAppBar"
         android:layout_marginHorizontal="10dp"
         app:elevation="3dp"
+        android:onClick="fabBtnClick"
         app:tint="@color/blue"
         android:src="@drawable/ic_home">
     </com.google.android.material.floatingactionbutton.FloatingActionButton>

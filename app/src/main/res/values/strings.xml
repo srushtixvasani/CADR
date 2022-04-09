@@ -14,6 +14,11 @@
     <string name="noAccount">Dont have an account? Sign up</string>
 
     <string name="logOut"> Log out</string>
+    <string name="deleteAccount"> Delete Account </string>
+    <string name="displayUserName"> User Name</string>
+    <string name="displayUserStatus"> Status </string>
+
+    <string name="button">Button</string>
 
 
     <string name="title_activity_main"> MainActivity</string>
@@ -28,7 +33,7 @@
     <string name="events"> EVENTS </string>
     <string name="chat"> CHAT </string>
     <string name="quiz"> QUIZ </string>
-    <string name= "account"> ACCOUNT</string>
+    <string name="account"> ACCOUNT</string>
     <!--
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.
