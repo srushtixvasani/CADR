@@ -1,6 +1,8 @@
 package com.example.cadr.activities
 
+import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -15,13 +17,19 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 import com.google.firebase.storage.StorageReference
+import com.theartofdev.edmodo.cropper.CropImage
 import de.hdodenhof.circleimageview.CircleImageView
+import id.zelory.compressor.Compressor
 
-class ProfileActivity: AppCompatActivity() {
+import java.io.File
 
-    var database : DatabaseReference ?= null
-    var currentUser : FirebaseUser ?= null
-    var storageReference : StorageReference ?= null
+class ProfileActivity : AppCompatActivity() {
+
+    var database: DatabaseReference? = null
+    var currentUser: FirebaseUser? = null
+    var storageReference: StorageReference? = null
+
+    var GALLERY: Int = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +50,7 @@ class ProfileActivity: AppCompatActivity() {
         var userId = currentUser!!.uid
 
         database = FirebaseDatabase.getInstance().reference.child("Users")
-                .child(userId)
+            .child(userId)
 
         database!!.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -65,7 +73,7 @@ class ProfileActivity: AppCompatActivity() {
 
         // Edit the users username
         var editUsernameButton = findViewById<ImageButton>(R.id.editNameButton)
-        editUsernameButton.setOnClickListener{
+        editUsernameButton.setOnClickListener {
             val intent = Intent(this, EditProfileActivity::class.java)
             intent.putExtra("username", profileUsername.text.toString().trim())
             intent.putExtra("status", profileStatus.text.toString().trim())
@@ -74,15 +82,53 @@ class ProfileActivity: AppCompatActivity() {
 
         // Edit the users status
         var editStatusButton = findViewById<ImageButton>(R.id.editStatusButton)
-        editStatusButton.setOnClickListener{
+        editStatusButton.setOnClickListener {
             val intent = Intent(this, EditProfileActivity::class.java)
             intent.putExtra("username", profileUsername.text.toString().trim())
             intent.putExtra("status", profileStatus.text.toString().trim())
             startActivity(intent)
         }
 
+        // Edit the users image
+        var editImageButton = findViewById<ImageButton>(R.id.editPictureButton)
+        editImageButton.setOnClickListener {
+            var galleryIntent = Intent()
+            galleryIntent.type = "image/*"
+            galleryIntent.action = Intent.ACTION_GET_CONTENT
+            startActivityForResult(
+                Intent.createChooser(galleryIntent, "SELECT YOUR USER PROFILE"),
+                GALLERY
+            )
+        }
+
 
     }
+
+    // following the documentation on https://github.com/ArthurHub/Android-Image-Cropper
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+
+        if (requestCode == GALLERY && resultCode == Activity.RESULT_OK) {
+            var picture: Uri? = data!!.data
+            CropImage.activity(picture).setAspectRatio(1, 1).start(this)
+        }
+
+        if (requestCode === CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            val result = CropImage.getActivityResult(data)
+
+            if (resultCode === Activity.RESULT_OK) {
+                val resultUri = result.uri
+                var userId = currentUser!!.uid
+                var thumbnailFile = File(resultUri.path)
+                var thumbnailBitmap = Compressor(this).setMaxHeight(200)
+                    .setMaxWidth(200)
+                    .setQuality(70)
+                    .compressToBitmap(thumbnailFile)
+                }
+            }
+
+        super.onActivityResult(requestCode, resultCode, data)
+        }
+
 
     fun profileFabBtnClick(view: View) {
         val intent = Intent(this, DashboardActivity::class.java)
@@ -90,12 +136,11 @@ class ProfileActivity: AppCompatActivity() {
     }
 
     // for logout to go to sign in activity
-    fun logOutClick(view: View){
+    fun logOutClick(view: View) {
         FirebaseAuth.getInstance().signOut()
         startActivity(Intent(this, AccountActivity::class.java))
         finish()
     }
-
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -113,19 +158,19 @@ class ProfileActivity: AppCompatActivity() {
             startActivity(Intent(this, EventsActivity::class.java))
         }
 
-        if(item.itemId == R.id.chat) {
+        if (item.itemId == R.id.chat) {
             // intent to chat activity
             startActivity(Intent(this, ChatActivity::class.java))
         }
 
-        if(item.itemId == R.id.quiz) {
+        if (item.itemId == R.id.quiz) {
             // intent to quiz activity
             var intent = Intent(this, QuizActivity::class.java)
             startActivity(intent)
 
         }
 
-        if(item.itemId == R.id.account) {
+        if (item.itemId == R.id.account) {
             // intent to profile activity
             startActivity(Intent(this, ProfileActivity::class.java))
         }
@@ -133,28 +178,27 @@ class ProfileActivity: AppCompatActivity() {
         return true
     }
 
-    fun eventsOnClick(view: MenuItem){
+    fun eventsOnClick(view: MenuItem) {
         val intent = Intent(this, EventsActivity::class.java)
         startActivity(intent)
     }
 
-    fun chatOnClick(view: MenuItem){
+    fun chatOnClick(view: MenuItem) {
         val intent = Intent(this, ChatActivity::class.java)
         startActivity(intent)
     }
 
 
-    fun quizOnClick(view: MenuItem){
+    fun quizOnClick(view: MenuItem) {
         val intent = Intent(this, QuizActivity::class.java)
         startActivity(intent)
     }
 
 
-    fun profileOnClick(view: MenuItem){
+    fun profileOnClick(view: MenuItem) {
         val intent = Intent(this, ProfileActivity::class.java)
         startActivity(intent)
     }
-
 
 
 //    override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -178,8 +222,6 @@ class ProfileActivity: AppCompatActivity() {
 //
 //        return true
 //    }
-
-
 
 
 }

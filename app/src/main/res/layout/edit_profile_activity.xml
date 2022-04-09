@@ -65,31 +65,17 @@
     </EditText>
 
     <ImageButton
-        android:id="@+id/updatePictureButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:backgroundTint="@color/white"
-        android:contentDescription="@string/button"
-        android:src="@drawable/ic_done"
-        android:layout_marginTop="155dp"
-        app:layout_constraintBottom_toTopOf="@+id/updateNameButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logoBar" />
-
-    <ImageButton
         android:id="@+id/updateNameButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="255dp"
         android:backgroundTint="@color/white"
         android:contentDescription="@string/button"
         android:src="@drawable/ic_done"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="55dp"
         app:layout_constraintBottom_toTopOf="@id/updateStatusButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/updatePictureButton">
-    </ImageButton>
+        app:layout_constraintTop_toBottomOf="@+id/logoBar"></ImageButton>
 
     <ImageButton
         android:id="@+id/updateStatusButton"

@@ -30,6 +30,7 @@ class EditProfileActivity : AppCompatActivity() {
         bottomNavView.menu.getItem(2).isEnabled = false
         bottomNavView.menu.getItem(4).isChecked = true
 
+        // NEED TO ADD WARNING FOR CHANGE IN USERNAME AND STATUS NOT TO BE NULL
         var usernameUpdate = findViewById<EditText>(R.id.edit_userName)
         var statusUpdate = findViewById<EditText>(R.id.edit_userStatus)
 
@@ -54,8 +55,25 @@ class EditProfileActivity : AppCompatActivity() {
         var updateNameButton = findViewById<ImageButton>(R.id.updateNameButton)
         var updateStatusButton = findViewById<ImageButton>(R.id.updateStatusButton)
 
+        //updates users name
         updateNameButton.setOnClickListener{
+            currentUser = FirebaseAuth.getInstance().currentUser
+            var userId = currentUser!!.uid
+            database = FirebaseDatabase.getInstance().reference.child("Users").child(userId)
 
+            var newUsername = usernameUpdate.text.toString().trim()
+            database!!.child("username").setValue(newUsername).addOnCompleteListener {
+                    task : Task<Void> ->
+                if (task.isSuccessful){
+                    Toast.makeText(this, "Your username has been updated!", Toast.LENGTH_LONG)
+                        .show()
+                    startActivity(Intent(this, ProfileActivity::class.java))
+                } else {
+                    Toast.makeText(this, "Sorry! Your username has not been updated", Toast.LENGTH_LONG)
+                        .show()
+                }
+
+            }
         }
 
         // updates users status
@@ -72,7 +90,7 @@ class EditProfileActivity : AppCompatActivity() {
                         .show()
                     startActivity(Intent(this, ProfileActivity::class.java))
                 } else {
-                    Toast.makeText(this, "Your status has not been updated", Toast.LENGTH_LONG)
+                    Toast.makeText(this, "Sorry! Your status has not been updated", Toast.LENGTH_LONG)
                         .show()
                 }
 
