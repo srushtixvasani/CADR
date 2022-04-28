@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginBottom="70dp"
-        android:src="@drawable/logo_3">
+        android:src="@raw/logo_3">
 
     </androidx.appcompat.widget.AppCompatImageView>
 

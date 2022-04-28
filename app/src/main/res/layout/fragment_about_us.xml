@@ -3,8 +3,106 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.FragmentAboutUs">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
+        android:scrollbars="vertical">
+
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <VideoView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:id="@+id/aboutUsVideo"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_gravity="center_horizontal">
+
+        </VideoView>
+
+        <ImageView
+            android:id="@+id/aboutUsThumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="10dp"
+            android:scaleType="centerCrop"/>
+
+        <ImageButton
+            android:id="@+id/aboutUsBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:foregroundGravity="center"
+            android:background="@color/clear"
+            android:layout_alignTop="@+id/aboutUsThumbnail"
+            android:layout_alignEnd="@+id/aboutUsThumbnail"
+            android:layout_alignStart="@+id/aboutUsThumbnail"
+            android:layout_alignBottom="@+id/aboutUsThumbnail"
+             android:src="@drawable/ic_play">
+
+        </ImageButton>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="15dp"
+            android:backgroundTint="@color/white"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            app:cardElevation="8dp"
+            android:layout_below="@+id/aboutUsVideo"
+            android:layout_marginHorizontal="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/au_text1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/dark_grey"
+                android:textSize="20sp">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="170dp"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/au_text2"
+                android:textColor="@color/dark_grey"
+                android:textSize="20sp">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="375dp"
+                android:text="@string/au_text3"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/dark_grey"
+                android:layout_marginBottom="10dp"
+                android:textSize="20sp">
+
+            </TextView>
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+
+    </ScrollView>
 
 
 </FrameLayout>

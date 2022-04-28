@@ -1,14 +1,537 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollViewResearch"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:layout_marginBottom="70dp"
+    android:verticalScrollbarPosition="right"
+    android:scrollbars="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.FragmentResearch">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
 
-</FrameLayout>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="15dp"
+                android:backgroundTint="@color/white"
+                app:cardElevation="8dp"
+                android:layout_marginHorizontal="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:layout_marginHorizontal="10dp">
+
+                    <TextView
+                        android:id="@+id/research1_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/research1"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textColor="@color/blue"
+                        android:textSize="25sp">
+
+                    </TextView>
+
+                    <VideoView
+                        android:id="@+id/research1_video"
+                        android:layout_width="wrap_content"
+                        android:layout_height="220dp"
+                        android:layout_below="@+id/research1_title"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="10dp">
+
+                    </VideoView>
+
+                    <ImageView
+                        android:id="@+id/research1_thumbnail"
+                        android:layout_width="360dp"
+                        android:layout_height="200dp"
+                        android:layout_below="@+id/research1_title"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="15dp"
+                        android:scaleType="centerCrop" />
+
+                    <ImageButton
+                        android:id="@+id/research1_btn"
+                        android:layout_width="360dp"
+                        android:layout_height="220dp"
+                        android:foregroundGravity="center"
+                        android:background="@color/clear"
+                        android:layout_alignTop="@+id/research1_thumbnail"
+                        android:layout_alignEnd="@+id/research1_thumbnail"
+                        android:layout_alignStart="@+id/research1_thumbnail"
+                        android:layout_alignBottom="@+id/research1_thumbnail"
+                        android:src="@drawable/ic_play">
+
+                    </ImageButton>
+
+                    <TextView
+                        android:id="@+id/research_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/research1_thumbnail"
+                        android:layout_marginVertical="10dp"
+                        android:layout_marginTop="10dp"
+                        android:paddingTop="10dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/research2"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/research_content1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/research_content"
+                        android:layout_marginVertical="2dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/research3"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/research_content2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:layout_below="@id/research_content1"
+                        android:layout_marginVertical="2dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/research4"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/research_content3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:layout_below="@id/research_content2"
+                        android:layout_marginVertical="2dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/research5"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/research_content4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:layout_below="@id/research_content3"
+                        android:layout_marginVertical="2dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/research6"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/research_content5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:layout_below="@id/research_content4"
+                        android:layout_marginVertical="2dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/research7"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/research_content6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:layout_below="@id/research_content5"
+                        android:layout_marginVertical="2dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/research8"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/research_content7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:layout_below="@id/research_content6"
+                        android:layout_marginVertical="2dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/research9"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/research_content8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:layout_below="@id/research_content7"
+                        android:layout_marginVertical="2dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/research10"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/research_content9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:layout_below="@id/research_content8"
+                        android:layout_marginVertical="2dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/research11"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/research_content10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:layout_below="@id/research_content9"
+                        android:layout_marginVertical="10dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/research12"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp">
+                    </TextView>
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:paddingVertical="10dp"
+                app:cardCornerRadius="15dp"
+                android:backgroundTint="@color/white"
+                app:cardElevation="8dp"
+                android:layout_marginHorizontal="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/research2_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/research2.1"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textColor="@color/blue"
+                        android:textSize="25sp">
+
+                    </TextView>
+
+                    <VideoView
+                        android:id="@+id/research2_video"
+                        android:layout_width="wrap_content"
+                        android:layout_height="220dp"
+                        android:layout_below="@+id/research2_title"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="10dp">
+
+                    </VideoView>
+
+                    <ImageView
+                        android:id="@+id/research2_thumbnail"
+                        android:layout_width="360dp"
+                        android:layout_height="200dp"
+                        android:layout_below="@+id/research2_title"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="10dp"
+                        android:scaleType="centerCrop" />
+
+                    <ImageButton
+                        android:id="@+id/research2_btn"
+                        android:layout_width="360dp"
+                        android:layout_height="220dp"
+                        android:foregroundGravity="center"
+                        android:background="@color/clear"
+                        android:layout_alignTop="@+id/research2_thumbnail"
+                        android:layout_alignEnd="@+id/research2_thumbnail"
+                        android:layout_alignStart="@+id/research2_thumbnail"
+                        android:layout_alignBottom="@+id/research2_thumbnail"
+                        android:src="@drawable/ic_play">
+
+                    </ImageButton>
+
+                    <TextView
+                        android:id="@+id/research2_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/research2_thumbnail"
+                        android:layout_marginTop="10dp"
+                        android:paddingTop="10dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/research2.2"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/research2_content1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/research2_content"
+                        android:layout_marginVertical="2dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/research2.3"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/research2_content2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/research2_content1"
+                        android:layout_marginVertical="2dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/research2.4"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp">
+                    </TextView>
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="15dp"
+                android:backgroundTint="@color/white"
+                app:cardElevation="8dp"
+                android:layout_marginHorizontal="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:layout_marginHorizontal="10dp">
+
+                    <TextView
+                        android:id="@+id/research3_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/research3.1"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textColor="@color/blue"
+                        android:textSize="25sp">
+
+                    </TextView>
+
+                    <VideoView
+                        android:id="@+id/research3_video"
+                        android:layout_width="wrap_content"
+                        android:layout_height="220dp"
+                        android:layout_below="@+id/research3_title"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="10dp">
+
+                    </VideoView>
+
+                    <ImageView
+                        android:id="@+id/research3_thumbnail"
+                        android:layout_width="360dp"
+                        android:layout_height="200dp"
+                        android:layout_below="@+id/research3_title"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="10dp"
+                        android:scaleType="centerCrop" />
+
+                    <ImageButton
+                        android:id="@+id/research3_btn"
+                        android:layout_width="360dp"
+                        android:layout_height="220dp"
+                        android:foregroundGravity="center"
+                        android:background="@color/clear"
+                        android:layout_alignTop="@+id/research3_thumbnail"
+                        android:layout_alignEnd="@+id/research3_thumbnail"
+                        android:layout_alignStart="@+id/research3_thumbnail"
+                        android:layout_alignBottom="@+id/research3_thumbnail"
+                        android:src="@drawable/ic_play">
+
+                    </ImageButton>
+
+                    <TextView
+                        android:id="@+id/research3_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/research3_thumbnail"
+                        android:layout_marginVertical="10dp"
+                        android:layout_marginTop="10dp"
+                        android:paddingTop="10dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/research3.2"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/research_content3.1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/research3_content"
+                        android:layout_marginVertical="2dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/research3.3"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/research_content3.2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:layout_below="@id/research_content3.1"
+                        android:layout_marginVertical="2dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/research3.4"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/research_content3.3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:layout_below="@id/research_content3.2"
+                        android:layout_marginVertical="2dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/research3.5"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/research_content3.4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:layout_below="@id/research_content3.3"
+                        android:layout_marginVertical="2dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/research3.6"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/research_content3.5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:layout_below="@id/research_content3.4"
+                        android:layout_marginVertical="2dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/research3.7"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/research_content3.6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/research_content3.5"
+                        android:layout_marginVertical="2dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/research3.8"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/research_content3.7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/research_content3.6"
+                        android:layout_marginVertical="2dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/research3.9"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp">
+                    </TextView>
+
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+</ScrollView>

@@ -1,14 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.FragmentContactUs">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
+        android:scrollbars="vertical">
 
-</FrameLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/contactUs_Card"
+                android:layout_margin="10dp"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <RelativeLayout
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/intro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:fontFamily="sans-serif"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp"
+                        android:text="@string/intro">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/intro2"
+                        android:layout_below="@+id/intro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:fontFamily="sans-serif-light"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp"
+                        android:text="@string/intro2">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/intro3"
+                        android:layout_below="@+id/intro2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:fontFamily="sans-serif"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp"
+                        android:text="@string/location">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/intro4"
+                        android:layout_below="@+id/intro3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:fontFamily="sans-serif-light"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="20sp"
+                        android:text="@string/location2">
+
+                    </TextView>
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/emailUs"
+                android:layout_below="@id/contactUs_Card"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal= "10dp"
+                android:paddingVertical="10dp"
+                style="@style/Widget.MaterialComponents.Button"
+                app:cornerRadius= "10dp"
+                android:text="@string/email2"
+                android:textAlignment="viewStart"
+                android:textSize="20sp"
+                app:icon="@drawable/ic_baseline_email_24"
+                app:iconPadding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </com.google.android.material.button.MaterialButton>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/phoneUs"
+                android:layout_below="@id/emailUs"
+                android:layout_marginHorizontal= "10dp"
+                style="@style/Widget.MaterialComponents.Button"
+                app:cornerRadius= "10dp"
+                android:text="@string/phone"
+                android:paddingVertical="10dp"
+                android:textAlignment="viewStart"
+                android:textSize="20sp"
+                app:icon="@drawable/ic_phone"
+                app:iconPadding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </com.google.android.material.button.MaterialButton>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/website"
+                android:layout_below="@id/phoneUs"
+                android:layout_marginHorizontal= "10dp"
+                android:backgroundTint="@color/green"
+                style="@style/Widget.MaterialComponents.Button"
+                app:cornerRadius= "10dp"
+                android:text="@string/website"
+                android:paddingVertical="10dp"
+                android:textAlignment="viewStart"
+                android:textSize="20sp"
+                app:icon="@drawable/ic_website"
+                app:iconPadding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </com.google.android.material.button.MaterialButton>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/facebook"
+                android:layout_below="@id/website"
+                android:layout_marginHorizontal= "10dp"
+                android:backgroundTint="@color/green"
+                style="@style/Widget.MaterialComponents.Button"
+                app:cornerRadius= "10dp"
+                android:text="@string/facebook"
+                android:paddingVertical="10dp"
+                android:textAlignment="viewStart"
+                android:textSize="20sp"
+                app:icon="@drawable/ic_facebook"
+                app:iconPadding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </com.google.android.material.button.MaterialButton>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/twitter"
+                android:layout_below="@id/facebook"
+                android:layout_marginHorizontal= "10dp"
+                android:backgroundTint="@color/green"
+                style="@style/Widget.MaterialComponents.Button"
+                app:cornerRadius= "10dp"
+                android:text="@string/twitter"
+                android:paddingVertical="10dp"
+                android:textAlignment="viewStart"
+                android:textSize="20sp"
+                app:icon="@drawable/ic_twitter"
+                app:iconPadding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </com.google.android.material.button.MaterialButton>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+
+</RelativeLayout>

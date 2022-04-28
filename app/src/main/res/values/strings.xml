@@ -17,8 +17,101 @@
     <string name="deleteAccount"> Delete Account </string>
     <string name="displayUserName"> User Name</string>
     <string name="displayUserStatus"> Status </string>
-
     <string name="button">Button</string>
+
+    <!--    About us -->
+    <string name="au_text1">The Centre for Ageing and Dementia
+Research (CADR) aims to improve the lives
+of older people and carers in Wales and
+elsewhere, through our research into ageing
+and the policies and practice that support
+healthy ageing.</string>
+
+    <string name="au_text2">We support development and delivery of dementia
+research, focusing on developing supportive
+inclusive communities, housing, transport,
+environments, workplace and loneliness and the
+greater understanding of aging and dementia-
+related changes in the brain and how they affect
+everyday life.</string>
+    <string name="au_text3">The animation above gives you a full overview of
+CADR.</string>
+
+
+    <!--    Research -->
+
+    <!--    Environments of ageing-->
+    <string name="research1">Environments of Ageing</string>
+    <string name="research2">CADR studies environments of ageing, looking at the physical and social
+        environments that surround us as we age.Our research focuses on how such environments can be
+        improved to help us stay connected to the things we want to do, enabling us to age healthily.
+    </string>
+    <string name="research3">Some areas CADR explores include: </string>
+    <string name="research4"> * Older drivers and age-friendly transport systems</string>
+    <string name="research5"> * Housing, neighbourhoods and communities</string>
+    <string name="research6"> * Retail</string>
+    <string name="research7"> * Mobility</string>
+    <string name="research8"> * Health and care environments</string>
+    <string name="research9"> * Workplaces  </string>
+    <string name="research10"> * Outdoor spaces</string>
+    <string name="research11"> * And sustainability and technology</string>
+    <string name="research12"> Through our studies, CADR aims to create age-friendly and dementia
+        supportive environments,including those in health and social care. Helping to prevent the
+        risk of social exclusion by improving networks within communities, allows all of us as we age
+        to do the things we want to do and stay connected.</string>
+
+    <!--    Dementia and Cognition in Ageing-->
+    <string name="research2.1">Dementia and Cognition in Ageing</string>
+    <string name="research2.2">As we grow older our ability to walk, think, see, hear, remember and
+        pay attention to information and interact with others may change.</string>
+    <string name="research2.3">CADRs research focuses on the biological factors and addresses issues
+        concerning the health of our brain.  We look at how it impacts on our behaviour and how we
+        think, especially in relation to conditions of the brain such as cognitive impairment and
+        dementia.</string>
+    <string name="research2.4">We are interested in changes that occur in the brain in the various
+        stages of vascular cognitive impairment ‘or vascular dementia’ as often referred to and how
+        this influences not only a person’s ability to interact socially and with their surroundings
+        but also how this impacts on living with this condition.</string>
+
+    <!--    Supporting Health and Wellbeing -->
+    <string name="research3.1">Supporting Health and Wellbeing</string>
+    <string name="research3.2">CADR’s research focuses on finding out what is important and what
+        matters to us as we age, enabling us to live the life we want.
+    </string>
+    <string name="research3.3"> Some areas CADR explores are:   </string>
+    <string name="research3.4"> * what we want to do as we age</string>
+    <string name="research3.5"> * where we want to work or retire </string>
+    <string name="research3.6"> * what we want from the places we live</string>
+    <string name="research3.7"> * and how we can care for family and friends who need our support</string>
+    <string name="research3.8">  Through our studies, a key issue we are interested in learning more
+        about is how people, organisations and communities can help to build resilience so we can
+        overcome some of the difficulties we all face as we grow older. </string>
+    <string name="research3.9">  Finding out what works for us as we age is essential if we are to
+        ensure that everyone can enjoy a happy and healthy later life.</string>
+
+    <!--    Opportunities -->
+    <string name="opportunity1">CADRs research addresses the needs of older people, people living
+        with dementia and carers </string>
+    <string name="opportunity2">We involve and engage members of the public, policy makers and
+        practitioners to improve services for older people in Wales, contributing to the health and
+        wealth of Wales.</string>
+    <string name="opportunity3">Are you interested in getting involved?</string>
+
+    <!--Contact us -->
+    <string name="phone">Phone Us</string>
+    <string name="email2">Email Us</string>
+    <string name="website">Website</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">Twitter</string>
+    <string name="location">We are currently located at:
+    </string>
+    <string name="location2">Haldane Building, Singleton Campus
+    Swansea University, SA2 8PP
+    </string>
+    <string name="intro">We welcome the involvement of groups and individuals in our work.</string>
+    <string name="intro2">To get more involved in our research or hear more about what CADR is working on,
+        get in touch with us via all the links below.
+    </string>
 
 
     <string name="title_activity_main"> MainActivity</string>
@@ -31,6 +124,11 @@
     <string name="title_activity_dashboard">DashboardActivity</string>
 
     <string name="events"> EVENTS </string>
+    <string name="meetingId"> Insert a meeting ID </string>
+
+
+
+
     <string name="chat"> CHAT </string>
     <string name="quiz"> QUIZ </string>
     <string name="account"> ACCOUNT</string>

@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:paddingVertical="5dp"
-        android:src="@drawable/logo_5">
+        android:src="@raw/logo_5">
 
     </ImageView>
 

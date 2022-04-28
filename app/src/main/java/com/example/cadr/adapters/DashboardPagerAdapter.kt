@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.example.cadr.fragments.*
 
 
+
 class DashboardPagerAdapter(fragmentManager : FragmentManager) : FragmentPagerAdapter(fragmentManager) {
 
 
@@ -18,15 +19,18 @@ class DashboardPagerAdapter(fragmentManager : FragmentManager) : FragmentPagerAd
                 return FragmentResearch()
             }
             2 -> {
-                return FragmentNews()
-            }
-            3 -> {
-                return FragmentOpportunities()
-            }
-            4 -> {
                 return FragmentGallery()
             }
+            3 -> {
+                return FragmentNews()
+            }
+            4 -> {
+                return FragmentNewsletter()
+            }
             5 -> {
+                return FragmentOpportunities()
+            }
+            6 -> {
                 return FragmentContactUs()
             }
         }
@@ -37,14 +41,15 @@ class DashboardPagerAdapter(fragmentManager : FragmentManager) : FragmentPagerAd
         when(position){
             0 -> return "ABOUT US"
             1 -> return "RESEARCH"
-            2 -> return "NEWS"
-            3 -> return "OPPORTUNITIES"
-            4 -> return "GALLERY"
-            5 -> return "CONTACT US"
+            2 -> return "GALLERY"
+            3 -> return "NEWS"
+            4 -> return "NEWSLETTER"
+            5 -> return "OPPORTUNITIES"
+            6 -> return "CONTACT US"
         }
         return null!!
     }
     override fun getCount(): Int {
-        return 6
+        return 7
     }
 }
